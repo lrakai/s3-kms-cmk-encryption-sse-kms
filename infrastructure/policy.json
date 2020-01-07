@@ -11,7 +11,8 @@
                 "kms:Encrypt",
                 "kms:GenerateDataKey",
                 "kms:CreateAlias",
-                "kms:CreateKey"
+                "kms:CreateKey",
+                "kms:PutKeyPolicy"
             ],
             "Resource": "*"
         },
@@ -26,6 +27,15 @@
                 "s3:PutBucketPolicy",
                 "s3:DeleteObject",
                 "s3:DeleteBucketPolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "PreventRedBanners",
+            "Effect": "Allow",
+            "Action": [
+                "iam:listRoles",
+                "iam:listUsers"
             ],
             "Resource": "*"
         }
